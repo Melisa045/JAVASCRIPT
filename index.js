@@ -12,6 +12,7 @@ class Producto {
 
     }
 
+    
     calcularDescuento() {
         let descuento = 0;
 
