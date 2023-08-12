@@ -1,77 +1,101 @@
+ 
+
 class Producto {
-    constructor(nombre, precio, cantidad, fechaEntrega) {
-        this.nombre = nombre;
-        this.precio = precio;
-        this.cantidad = cantidad;
-        this.fechaEntrega = fechaEntrega;
+    constructor(nombre, precio, cantidad) {
+        this.nombre = nombre
+        this.precio = precio
+        this.cantidad = cantidad
     }
 
-    calcularIGV() {
+    generarMonto() {
 
-        return this.montoTotal = this.precio * 1.18;
+        return this.precio * this.cantidad
+    }
+    generarDescuento() {
+        if (this.cantidad >= 2) {
+            let descuento = this.generarMonto() * 0.05
 
+            return this.generarMonto() - descuento
+
+        } else {
+
+            return this.generarMonto()
+        }
     }
 
+    generarIGV() {
+
+        if (this.cantidad >= 2) {
+            return this.generarDescuento() * 1.18
+
+        } else {
+            return this.generarMonto() * 1.18
+        }
+    }
+}
+
+let form = document.getElementById("Registrar")
+const productos = []
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault()
+    let nombre = document.getElementById("nombre").value
+    let precio = parseFloat(document.getElementById("precio").value)
+    let cantidad = parseInt(document.getElementById("cantidad").value)
+
+    let producto = new Producto(nombre, precio, cantidad)
+
+    let monto = producto.generarMonto()
+    let descuento = producto.generarDescuento()
+    let impuesto = producto.generarIGV()
+
+    //Crear objeto
+    let productData = {
+        producto: producto,
+        monto: monto,
+        descuento: descuento,
+        impuesto: impuesto
+    };
+
+    productos.push(productData)
     
-    calcularDescuento() {
-        let descuento = 0;
+    console.log(productData)
+    guardarLocalStorage()
+    mostrarTarea()
 
+    //Limpiar campos
+    document.getElementById("nombre").value = ""
+    document.getElementById("precio").value = ""
+    document.getElementById("cantidad").value = ""
 
-        if (this.precio >= 200 && this.precio <= 500) {
-            descuento = this.precio * 0.05;
+})
 
+let lista = document.getElementById("lista")
 
-        } else if (this.precio >= 501 && this.precio <= 1500) {
-            descuento = this.precio * 0.10;
-
-        } else {
-            return "No hay descuento";
-        }
-
-        return descuento;
-
+const mostrarTarea = () => { //es lo mismo function mostrarTarea(){}
+    lista.innerHTML = "" //Limpiamos la lista que el UL este vacio
+    productos.forEach((producto, index) => {
+        lista.innerHTML += `
+    <li>
+    <span>Producto: ${producto.nombre} Precio: ${producto.precio} Cantidad: ${producto.cantidad} 
+    Monto a Pagar: ${producto.generarMonto()} Monto con Descuento: ${producto.generarDescuento()} 
+    Monto Total : ${producto.generarIGV()}</span>
+    <button class="delete" onclick="eliminarTarea(${index})">Eliminar</button>
+    </li>
+    `
     }
-
-
-    calcularFechaEntrega() {
-
-        let fechaInicio = new Date();
-        fechaInicio = fechaInicio.getDate();
-
-        if (this.fechaEntrega >= (fechaInicio + 2)) {
-            console.log("Producto se entregará en la fecha ingresada.")
-        } else {
-            console.log("Por favor solicitar la entrega con 48 horas de anticipación.")
-        }
-
-    }
+    )
 }
 
-function crearProducto(i) {
-
-    let nombre = prompt("Ingrese Producto " + i + ":");
-    let precio = parseInt(prompt("Ingrese Precio " + i + ":"));
-    let cantidad = parseInt(prompt("Ingrese Cantidad " + i + ":"));
-    let fechaEntrega = prompt("Ingrese Fecha Engrega" + i + ":");
-
-    let producto = new Producto(nombre, precio, cantidad, fechaEntrega);
-    return producto;
+const guardarLocalStorage = () => {
+    localStorage.setItem("productos", JSON.stringify(productos))
 
 }
 
-for (let i = 1; i <= 3; i++) {
-    let resultado = crearProducto(i);
-    console.log(resultado);
-
-    console.log("Precio incluido IGV: " + resultado.calcularIGV());
-    console.log("Descuento:" + resultado.calcularDescuento());
-    console.log("Fecha:" + resultado.calcularFechaEntrega());
-
-
+const eliminarTarea = (index) => {
+    productos.splice(index, 1)
+    guardarLocalStorage()
+    mostrarTarea()
 }
 
-function saludar() {
-    console.log("Gracias por comprar nuestros productos!!!");
-    alert("Gracias por comprar nuestros productos!!!");
-}
-saludar();
+
