@@ -1,4 +1,4 @@
- 
+
 
 class Producto {
     constructor(nombre, precio, cantidad) {
@@ -45,21 +45,8 @@ form.addEventListener("submit", (e) => {
 
     let producto = new Producto(nombre, precio, cantidad)
 
-    let monto = producto.generarMonto()
-    let descuento = producto.generarDescuento()
-    let impuesto = producto.generarIGV()
+    productos.push(producto)
 
-    //Crear objeto
-    let productData = {
-        producto: producto,
-        monto: monto,
-        descuento: descuento,
-        impuesto: impuesto
-    };
-
-    productos.push(productData)
-    
-    console.log(productData)
     guardarLocalStorage()
     mostrarTarea()
 
