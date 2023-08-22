@@ -1,0 +1,42 @@
+.header {
+    grid-area: header;
+
+
+    .menu {
+
+        background: linear-gradient(0deg, rgba(195, 34, 51, 1) 0%, rgba(247, 64, 228, 0.673) 100%);
+
+        @include fuente;
+
+        @include flex;
+
+        list-style: none;
+
+        li {
+            a {
+                text-decoration: none;
+                color: gold;
+
+                &:hover {
+                    color: $bkgdHeaderLetra;
+
+                }
+            }
+        }
+
+
+
+        /* focus para el texto */
+        input:focus {
+            height: 30px;
+            background-color: $bkgdHeaderLetra;
+        }
+
+        input[type="checkbox"]:checked {
+            box-shadow: 0 0 0 3px $bkgdHeaderLetra;
+
+        }
+    }
+}
+
+/* } */

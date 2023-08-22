@@ -1,0 +1,19 @@
+.contenedorCarousel {
+    grid-area: carousel;
+
+    @include flex;
+    
+    .tituloCarousel {
+        text-align: center;
+        color: brown;
+        margin-top: 3%;
+        font-family: 'gnuolane_rg-webfont';
+
+    }
+
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(108%);
+}
