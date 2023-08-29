@@ -1,4 +1,3 @@
-//CALLSTACK
 class Producto {
     constructor(nombre, precio, cantidad) {
         this.nombre = nombre
@@ -97,9 +96,7 @@ const eliminarTarea = (index) => {
     });
 
 
-
 }
-
 
 let formbtnFinalizar = document.getElementById("btnFinalizar");
 formbtnFinalizar.style.display = "none";
@@ -122,5 +119,3 @@ formbtnFinalizar.addEventListener("click", (e) => {
         confirmButtonText: 'Si'
     });
 });
-
-

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.6.1/toastify.min.css"
+        integrity="sha512-UiKdzM5DL+I+2YFxK+7TDedVyVm7HMp/bN85NeWMJNYortoll+Nd6PU9ZDrZiaOsdarOyk9egQm6LOJZi36L2g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.6.1/toastify.min.js"
+        integrity="sha512-79j1YQOJuI8mLseq9icSQKT6bLlLtWknKwj1OpJZMdPt2pFBry3vQTt+NZuJw7NSd1pHhZlu0s12Ngqfa371EA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/luxon@2.3.0/build/global/luxon.min.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <h1 class="title-head">CARRITO DE COMPRAS</h1>
+    </header>
+
+    <form id="Registrar" class="form">
+        <input type="text" name="nombre" id="nombre" placeholder="Producto">
+        <input type="number" name="precio" id="precio" placeholder="Precio">
+        <input type="number" name="cantidad" id="cantidad" placeholder="Cantidad">
+        <input type="submit" value="Comprar" id="delete" class="botonComprar">
+
+    </form>
+
+    <ul id="lista"></ul>
+
+    <div class="botonComprarFinPosi">
+        <form id="btnFinalizar" class="botonComprarFinPosi">
+            <!-- <input type="submit" value="Finalizar compra" id="botonComprarFin" class="botonComprarFin">-->
+            <input type="submit" value="Finalizar compra" class="botonComprarFin " id="btnFin">
+
+        </form>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
+

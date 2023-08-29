@@ -1,0 +1,75 @@
+.title-head {
+    text-align: center;
+    color: brown;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 28px;
+
+}
+
+.form {
+    text-align: center;
+    color: brown;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 28px;
+}
+
+.botonComprar {
+    background-color: #fff;
+    width: 100px;
+    z-index: 1;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+    border-radius: 10px;
+    background-color: red;
+    color: white;
+
+}
+
+.delete {
+    background-color: #fff;
+    width: 100px;
+    z-index: 1;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+    border-radius: 10px;
+    background-color: red;
+    color: white;
+}
+
+.botonComprarFin {
+    background-color: #fff;
+    width: 200px;
+    z-index: 1;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+    border-radius: 10px;
+    background-color: red;
+    color: white;
+
+}
+
+.botonComprarFinPosi {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+
+}
+
+.container {
+    background-color: pink;
+  }
+  
+  .row {
+    display: flex;
+  }
+  
+  .color {
+    color: blue;
+  }
+  
+  .delete {
+    width: 110px;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: red;
+    margin-left: 10px;
+  }
