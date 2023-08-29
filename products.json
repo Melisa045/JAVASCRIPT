@@ -1,0 +1,12 @@
+[
+    {
+      "name": "Flores Tulipanes",
+      "price": 108.00,
+      "quantity": 2
+    },
+    {
+      "name": "Caja Chocolates",
+      "price": 45.00,
+      "quantity": 3
+    }
+  ]
