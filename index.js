@@ -33,6 +33,7 @@ class Producto {
     }
 }
 
+
 let form = document.getElementById("Registrar")
 const productos = []
 
@@ -118,4 +119,28 @@ formbtnFinalizar.addEventListener("click", (e) => {
         text: '¿Guardar los datos?',
         confirmButtonText: 'Si'
     });
+
 });
+
+
+const listado = document.querySelector('#listado')
+
+
+const mostrarTareaProductos = () => {
+    fetch('./products.json')
+        .then((resp) => resp.json())
+        .then((data) => {
+
+            data.forEach((post) => {
+                const li = document.createElement('li')
+                li.innerHTML = `
+                <span>Producto: ${post.name} Precio: ${post.price} Cantidad: ${post.quantity}
+                    Monto a Pagar: ${post.price * post.quantity} Monto con Descuento: ${post.price * post.quantity}
+                    Monto Total: ${post.price * post.quantity * 1.18}</span>
+                    <button class="delete" onclick="eliminarTarea(${post.id})">Eliminar</button>`
+
+                listado.append(li)
+            })
+        })
+}
+mostrarTareaProductos()
