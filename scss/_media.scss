@@ -1,0 +1,310 @@
+@media screen and (max-width:1300px) {
+
+    .productos {
+        .spaceImgPrincipal {
+            .sizePrincImage {
+                width: 200px;
+                height: 130px;
+            }
+        }
+    }
+}
+
+/* TAMAÑO TABLET 768PX */
+@media screen and (max-width:768px) {
+
+    .contenedorPrincipal {
+
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas:
+            "perfil perfil"
+            "header productos"
+            "redes footer"
+        ;
+        justify-content: center;
+        place-items: center;
+
+        .contenedorGaleria {
+            grid-template-columns: repeat(5, 100px);
+            grid-template-rows: repeat(3, 140px);
+            gap: 6px 6px;
+        }
+
+
+        .perfil {
+
+            .ancho {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        .header {
+            display: flex;
+
+            .menu {
+
+                flex-wrap: wrap;
+                align-items: flex-start;
+                align-content: flex-start;
+                justify-content: space-between;
+            }
+        }
+
+        .productos {
+
+
+            .spaceImgPrincipal {
+                padding: 0 1px;
+                margin: 1px 1px;
+
+                .sizePrincImage {
+                    width: 117px;
+                    height: 70px;
+                }
+
+                .subtituloPrincipal {
+                    font-size: 10px;
+
+                }
+
+                .prinBtnCarForm {
+                    .prinBtnCar {
+                        font-size: 10px;
+                    }
+                }
+            }
+        }
+
+        .contenedorCarousel {
+            visibility: hidden;
+            content-visibility: hidden;
+        }
+
+        .redes {
+            display: none;
+        }
+
+    }
+
+}
+
+/* TAMAÑO MOBILE 500PX O MENOS */
+@media screen and (max-width:500px) {
+
+    .contenedorPrincipal {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.3fr, 0.2fr 1fr 0.3fr;
+        grid-template-areas:
+            "perfil"
+            "header"
+            "productos"
+            "footer"
+        ;
+        justify-content: center;
+        place-items: center;
+
+        .contenedorGaleria {
+            grid-template-columns: repeat(5, 60px);
+            grid-template-rows: repeat(3, 100px);
+            gap: 6px 6px;
+        }
+
+
+        .perfil {
+
+            .ancho {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        .header {
+            .menu {
+                display: flex;
+                flex-direction: column;
+            }
+
+        }
+
+        .contenedorCarousel {
+            visibility: hidden;
+            content-visibility: hidden;
+        }
+
+        .productos {
+
+            .subformatoPolDesc {
+                font-size: 17px;
+                text-align: left;
+            }
+
+            .formatoPoliticas {
+                font-size: 23px;
+            }
+
+            .subformatoPoliticas {
+                font-size: 21px;
+            }
+
+            .tituloPrincipal {
+                font-size: 13px;
+
+            }
+
+            .galeriaTitulo {
+                padding-top: 15px;
+            }
+
+            .subtitPrincArr {
+                visibility: hidden;
+                content-visibility: hidden;
+            }
+
+            .princContenedorFlores {
+                display: flex;
+                flex-direction: column;
+                place-items: center;
+                text-align: center;
+                align-items: center;
+                align-content: center;
+
+            }
+
+            .princContenedorPeluches {
+                display: flex;
+                flex-direction: column;
+                place-items: center;
+                text-align: center;
+                align-items: center;
+                align-content: center;
+
+            }
+
+
+            .spaceImgPrincipal {
+                padding: 0 1px;
+                margin: 1px 1px;
+
+                .prinBtnCarForm {
+                    .prinBtnCar {
+                        font-size: 10px;
+                    }
+                }
+
+                .sizePrincImage {
+                    width: 150px;
+                    height: 90px;
+                }
+
+            }
+
+            .fontContactos {
+                font-weight: none;
+                font-size: 15px;
+
+            }
+
+            .formPerfilBtnContactos {
+                font-size: 15px;
+                color: rgb(84, 82, 179);
+                background-color: rgb(53, 230, 230);
+            }
+        }
+
+        .contenedorRedes {
+            visibility: hidden;
+            content-visibility: hidden;
+        }
+
+
+        .footer {
+            .contenedorFooter {
+                font-size: 10px;
+
+                .titleFooter {
+                    font-size: 10px;
+                }
+
+                .sizeIconEmailFooter {
+                    width: 15px;
+                    margin: 1px;
+
+                }
+            }
+        }
+
+
+        .otros {
+            .contRegistrar {
+                font-size: 13px;
+
+                .formPerfilSelected {
+                    font-size: 17px;
+                    font-family: 'gnuolane_rg-webfont';
+                    color: rgb(99, 46, 55);
+                    font-weight: bold;
+
+                }
+
+                .formPerfilBtn {
+                    font-size: 15px;
+                }
+
+                .tituloPrincipal {
+                    font-size: 15px;
+
+                }
+
+                .titPrincRegistrarse {
+                    font-size: 20px;
+                }
+
+                .tituloPrincipalSub {
+
+                    font-size: 15px;
+                }
+
+            }
+        }
+
+        .tituloPrincArreglos {
+            font-size: 20px;
+            text-align: center;
+            font-family: 'gnuolane_rg-webfont';
+        }
+
+        .subtitPrincArr2 {
+            font-size: 15px;
+            text-align: justify;
+            font-family: 'gnuolane_rg-webfont';
+            color: rgb(94, 44, 52);
+
+        }
+
+        .tituloPrincPeluches {
+
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .tituloPrincipal1 {
+            font-size: 20px;
+            color: palevioletred;
+            text-align: center;
+        }
+
+        .tituloPrincipal2 {
+            color: palevioletred;
+            font-size: 20px;
+            text-align: center;
+
+        }
+
+
+    }
+}

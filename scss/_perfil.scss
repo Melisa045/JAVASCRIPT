@@ -1,0 +1,29 @@
+.perfil {
+    grid-area: perfil;
+    background-color: $bkgdPerfilContPrinc;
+
+
+    .ancho {
+        @include flex;
+
+
+        .imagenTitutlo {
+            .sizeLogo {
+                width: 170px;
+                height: 90px;
+
+            }
+        }
+
+        .registrarse {
+            .iconoInicioSesion {
+                width: 28px;
+                height: 28px;
+            }
+
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+}

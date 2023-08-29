@@ -1,0 +1,42 @@
+footer {
+    grid-area: pie;
+    background-color: rgb(230, 237, 245);
+    background-image: url(../assets/img/fondoFooter.jfif);
+
+    .contenedorFooter {
+
+        @include flex;
+        @include contRedesFooter;
+
+        .footerGeneral {
+
+            @include noStyleDcoration;
+
+            .titleFooter {
+                font-size: 15px;
+            }
+        }
+
+        .footerPoliticas {
+            @include noStyleDcoration;
+
+            .titleFooter {
+                font-size: 15px;
+            }
+        }
+
+        .footerSuscribete {
+            @include noStyleDcoration;
+
+            .titleFooter {
+                font-size: 15px;
+            }
+        }
+
+        .sizeIconEmailFooter {
+            width: 30px;
+            margin: 3px;
+        }
+    }
+
+}
